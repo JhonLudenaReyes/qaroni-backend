@@ -41,6 +41,10 @@ public class AuthorController {
 				.orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	}
 
+	/**
+	 * Obtiene una lista de autores y sus libros
+	 * @return List<Author>
+	 */
 	@GetMapping("/list-authors-and-books")
 	public ResponseEntity<List<Author>> getAuthorsAndBooks() {
 		return authorService.getAuthorsAndBooks().map(authors -> new ResponseEntity<>(authors, HttpStatus.OK))

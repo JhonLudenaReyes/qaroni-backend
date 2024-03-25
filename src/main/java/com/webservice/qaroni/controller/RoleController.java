@@ -19,7 +19,7 @@ public class RoleController {
 	private RoleService roleService;
 
 	/**
-	 * REGISTRA UN NUEVO ROL
+	 * REGISTRA UN NUEVO ROL, PARA ESTA APLICACION SE HA TOMADO COMO ROLES: DIRECTIVOS Y BIBLIOTECARIOS
 	 * @param role
 	 * @return Role
 	 */

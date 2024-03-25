@@ -69,7 +69,7 @@ public class BookController {
 
 	/**
 	 * Solo usuarios registrados pueden registrar nuevos libros
-	 * 
+	 * CUALQUIER USUARIO QUE NO SE HAYA REGISTRADO EN EL SISTEMA ES UN USUARIO ANONIMO
 	 * @param userId
 	 * @param book
 	 * @return Book

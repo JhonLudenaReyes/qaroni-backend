@@ -22,6 +22,11 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 
+	/**
+	 * Registra a una persona
+	 * @param person
+	 * @return Person
+	 */
 	@PostMapping("/save-person")
 	public ResponseEntity<Person> save(@RequestBody Person person) {
 		return new ResponseEntity<>(personService.save(person), HttpStatus.CREATED);
