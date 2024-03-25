@@ -18,6 +18,23 @@ public interface BookDaoRepository extends JpaRepository<Book, Integer>{
 	 */
 	Optional<List<Book>> findAllByState(String state);
 	
-	@Query("select b.bookId, b.title, b.stock, b.price, b.publicationDate, b.state from Book as b where b.state = 'A'")
-	Optional<List<Object>> getActiveBooks(String state);
+	
+	/**
+	 * Busqueda de libro por Id
+	 * @param bookId
+	 * @param state
+	 * @return Optional<Book>
+	 */
+	Optional<Book> findByBookIdAndState(Integer bookId, String state);
+	
+	/**
+	 * Obtiene una lista de libros con su descripción
+	 * @param state
+	 * @return Optional<List<Book>>
+	 */
+	@Query("select b from Book as b where b.state = 'A'")
+	Optional<List<Book>> getActiveBooks(String state);
+	
+	@Query("select count(*) from Book as b where b.state = 'A'")
+	Integer getTotalBooks();
 }

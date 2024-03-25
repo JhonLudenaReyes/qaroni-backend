@@ -28,4 +28,16 @@ public class AuthorService implements AuthorRepository{
 		return authorDaoRepository.save(author);
 	}
 
+	@Override
+	public Integer getTotalAuthors() {
+		// TODO Auto-generated method stub
+		return authorDaoRepository.getTotalAuthors();
+	}
+
+	@Override
+	public Optional<Author> getAuthorById(Integer authorId) {
+		// TODO Auto-generated method stub
+		return authorDaoRepository.findByAuthorIdAndState(authorId, "A");
+	}
+
 }

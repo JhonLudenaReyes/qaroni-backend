@@ -10,4 +10,6 @@ import com.webservice.qaroni.model.entity.User;
 public interface UserDaoRepository extends JpaRepository<User, Integer>{
 
 	Optional<List<User>> findAllByState(String state);
+	
+	Optional<User> findByUserIdAndState(Integer userId, String state);
 }

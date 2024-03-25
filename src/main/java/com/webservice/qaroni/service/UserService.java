@@ -28,4 +28,10 @@ public class UserService implements UserRepository{
 		return userDaoRepository.findAllByState("A");
 	}
 
+	@Override
+	public Optional<User> getUserById(Integer userId) {
+		// TODO Auto-generated method stub
+		return userDaoRepository.findByUserIdAndState(userId, "A");
+	}
+
 }
